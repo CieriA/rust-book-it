@@ -116,4 +116,91 @@ spazio in mezzo.
 > con la distribuzione standard di Rust, come anche `rustc`, quindi dovrebbe
 > già essere installato sul tuo computer!
 
-TODO
+Il corpo della funzione `main` contiene il seguente codice:
+
+```rust
+println!("Ciao, mondo!");
+```
+
+Questa riga svolge tutto il lavoro in questo piccolo programma: stampa il testo
+sullo schermo. Ci sono 3 dettagli importanti da notare qui.
+
+Primo, `println!` chiama una macro di Rust. Se avesse chiamata una funzione,
+sarebbe scritto come `println` (senza il `!`). Le macro in Rust sono un modo di
+scrivere codice che genera codice per estendere la sintassi di Rust e ne
+parleremo più nel dettaglio nel [Capitolo 20][ch20-macros]<!-- ignore -->. Per
+adesso, hai solo bisogno di sapere che usare un `!` indica l'uso di una macro
+anziché una normale funzione e che le macro non sempre seguono le stesse regole
+delle funzioni.
+
+Secondo, puoi vedere la stringa `"Ciao, mondo!"`. Passiamo questa stringa come
+argomento per `println!` e la stringa è stampata a schermo.
+
+Terzo, finiamo la riga con un punto e virgola (`;`), che indica la fine di
+quest'espressione e che la prossima è pronta a cominciare. La maggior parte
+delle righe del codice Rust finisce con un punto e virgola.
+
+### Compilare ed Eseguire sono Passaggi Separati
+
+Hai appena eseguito un programma appena creato, quindi esaminiamo ogni
+passaggio di questo processo.
+
+Prima di eseguire un programma Rust, devi compilarlo usando il compilatore
+di Rust digitando il comando `rustc` con il nome del file come argomento,
+così:
+
+```console
+$ rustc main.rs
+```
+
+Se conosci C o C++, noterai che questo è simile a `gcc` o `clang`. Dopo aver
+compilato correttamente, Rust produce un file binario eseguibile.
+
+Su Linux, macOS e PowerShell su Windows, puoi vedere l'eseguibile digitando il
+comando `ls` sulla tua shell:
+
+```console
+$ ls
+main  main.rs
+```
+
+Su Linux e macOS, vedrai due file. Con PowerShell su Windows, vedrai gli stessi
+tre file che vedresti usando CMD. Con CMD su Windows, dovresti digitare il
+seguente:
+
+```cmd
+> dir /B %= the /B option says to only show the file names =%
+main.exe
+main.pdb
+main.rs
+```
+
+Questo mostra il file del codice sorgente con l'estensione _.rs_, il file
+eseguibile (_main.exe_ su Windows, _main_ sulle altre piattaforme), e, usando
+Windows, un file contenente informazioni sul debugging con l'estensione _.pdb_.
+Da qui, esegui il file _main_ o _main.exe_ così:
+
+```console
+$ ./main # or .\main on Windows
+```
+
+Se il tuo _main.rs_ è il tuo programma “Ciao, mondo!”, questa riga stampa
+`Ciao, mondo!` sul tuo terminale.
+
+Se sei familiare con un linguaggio dinamico, come Ruby, Python o Javascript,
+potresti non essere abituato a compilare ed eseguire un programma in passaggi
+separati. Rust è un linguaggio _compilato in anticipo_, il che significa che
+puoi compilare un programma e dare l'eseguibile a qualcun altro e lui può
+eseguirlo senza avere Rust installato. Se dai a qualcuno un file _.rb_, _.py_ o
+_.js_, lui avrà bisogno di avere Ruby, Python o Javascript installati
+(rispettivamente), però in quei linguaggi hai bisogno di un solo comando per
+compilare ed eseguire il tuo programma. Ogni cosa è un compromesso nello stile
+di un linguaggio.
+
+Compilare con `rustc` è abbastanza per programmi semplici, ma man mano che il
+tuo progetto cresce, ???. Nella prossima pagina, ti introdurremo allo strumento
+Cargo, che ti aiuta a scrivere programmi Rust del mondo reale.
+
+[diagnostica]: ch01-01-installation.md#diagnostica
+[devtools]: appendix-04-useful-development-tools.md
+[ch20-macros]: ch20-05-macros.md
