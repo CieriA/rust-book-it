@@ -3,7 +3,7 @@
 ## Guidelines
 
 When writing the translation of a file, always give a look at 
-[translated terms](), where you can find the correct translation
+[translated terms](src/ch00-01-translated-terms.md), where you can find the correct translation
 of some language specific terms to keep terminology consistent.
 
 Try to stay accurate to the original english text.

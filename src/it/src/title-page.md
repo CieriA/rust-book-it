@@ -19,7 +19,7 @@ esegui `rustup doc --book` per aprirlo.
 Inoltre, molte [traduzioni] della community sono disponibili.
 
 La versione inglese di questo testo è disponibile come
-[formato cartaceo ed ebook su No Starch Press][nsprust]
+[formato cartaceo ed ebook su No Starch Press][nsprust].
 
 [installazione]: ch01-01-installation.md
 [traduzioni]: https://nostarch.com/rust-programming-language-2nd-edition
