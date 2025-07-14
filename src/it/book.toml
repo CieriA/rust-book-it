@@ -1,0 +1,8 @@
+[book]
+title = "Il Linguaggio di Programmazione Rust"
+author = "Steve Klabnik e Carol Nichols, con la partecipazione della Rust Community"
+
+[output.html]
+additional-css = [".../ferris.css", ".../theme/2018-edition.css"]
+additional-js = [".../ferris.js"]
+git-repository-url = "https://github.com/CieriA/rust-book-it"
